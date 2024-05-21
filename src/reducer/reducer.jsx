@@ -2,6 +2,14 @@ import actionTypes from "./actionTypes";
 
 export function reducer(state,action){
   switch (action.type){
+
+    case actionTypes.LOAD_MORE_PRODUCTS : {
+      return {
+        ...state,
+        limit : action.payload
+      }
+    }
+
     case actionTypes.CHANGE_PRICE : {
       
       return {

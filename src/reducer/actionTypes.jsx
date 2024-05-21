@@ -2,7 +2,8 @@ const actionTypes = {
   "ADD_TO_CAR" : "ADD_TO_CAR",
   "DELETE_TO_CAR" : "DELETE_TO_CAR",
   "CHANGE_CATEGORIE" : "CHANGE_CATEGORIE",
-  "CHANGE_PRICE" : "CHANGE_PRICE"
+  "CHANGE_PRICE" : "CHANGE_PRICE",
+  "LOAD_MORE_PRODUCTS" : "LOAD_MORE_PRODUCTS"
 }
 
 export default actionTypes;

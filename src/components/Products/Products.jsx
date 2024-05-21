@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 import './Products.css'
 import { useAppContext } from '../../context/context';
+import actionTypes from '../../reducer/actionTypes';
 
 
 
@@ -25,7 +26,7 @@ export default function Products(){
   const fetchProducts = async () =>{
 
     try{
-      const response = await fetch(`https://dummyjson.com/products?limit=10&skip=10`);
+      const response = await fetch(`https://dummyjson.com/products?limit=${appState.limit}&skip=0`);
       if(!response.ok){
         throw new Error("failed to fetch data")
       }else{
@@ -41,7 +42,26 @@ export default function Products(){
   useEffect(()=>{
     fetchProducts()
   },[appState]);
- 
+
+  useEffect(()=>{
+    function handleScroll (){
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+      const scrollTop = window.scrollY;
+
+      if((scrollTop+windowHeight >= documentHeight)&&(appState.limit<100)){
+        dispatch({
+          type : actionTypes.LOAD_MORE_PRODUCTS,
+          payload : (appState.limit + 10)
+        })
+      }
+    }
+
+    window.addEventListener("scroll",handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+
+  },[appState])
 
   return(
   <div className="Products">
