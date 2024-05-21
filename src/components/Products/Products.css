@@ -1,0 +1,48 @@
+.Products {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  width: fit-content; 
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.product {
+  height: auto; 
+  margin: 10px;
+  background-color: #00000078;
+  text-align: left;
+  overflow: hidden;
+  border-radius: 10px;
+  display: row;
+}
+
+.product img{
+  width: 100%;
+  height: 200px;
+}
+
+.product h3,
+.product h4{
+  font-size: medium;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.product--data{
+  width: 80%;
+  height: 80px;
+
+}
+
+.product--car{
+  position: relative;
+  width: 25px;
+  height: 25px;
+  bottom: 30px;
+  left: 80%;
+  border: solid #fff 1px;
+  padding: 4px;
+  border-radius: 10px;
+  z-index: 0
+}
