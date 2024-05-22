@@ -63,6 +63,28 @@ export default function Products(){
 
   },[appState])
 
+  function addProductToCar(id,thumbnail,description,title,price){
+
+    if (process.env.NODE_ENV === 'development') {
+      // Development mode warning
+      alert(
+        '**Warning:** Executing `addProductToCar` in development mode may cause incorrect product summation. Ensure you are testing in production mode for accurate results.'
+      );
+    }
+
+    dispatch({
+      type : actionTypes.ADD_TO_CAR,
+      payload : {
+        id : id,
+        thumbnail : thumbnail,
+        description : description,
+        title : title,
+        price : price,
+        amount : 1
+      }
+    })
+  }
+
   return(
   <div className="Products">
     { //si no ha cargado la lista filtrada imprime los productios por defecto
@@ -75,7 +97,7 @@ export default function Products(){
               <h3>{product.title}</h3>
               <h4>Price: ${product.price}</h4>  
             </div>
-            <FaShoppingCart className='product--car'/>
+            <FaShoppingCart className='product--car' onClick={()=>addProductToCar(product.id,product.thumbnail,product.description,product.title,product.price)}/>
           </div>
         ))
       : null

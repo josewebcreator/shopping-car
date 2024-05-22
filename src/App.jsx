@@ -5,6 +5,7 @@ import Products from './components/Products/Products'
 import { reducer } from './reducer/reducer'
 import initialState from './reducer/initialState'
 import AppContext from './context/context'
+import Car from './components/Car/Car'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <>
         <Filters/>
         <Products/>
+        <Car/>
       </>  
     </AppContext.Provider>
     

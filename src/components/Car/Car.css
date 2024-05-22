@@ -1,0 +1,28 @@
+.car--inner{
+  position: fixed;
+  width: 270px;
+  height: 500px;
+  background-color: #ffffffe9;
+  left: 0;
+  top: 90px;
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.display--arrow{
+  position: fixed;
+  display: flex;
+  width: 30px;
+  height: 50px;
+  left: 270px;
+  top: 100px;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  background-color: #1DA1F2;
+}
+
+.display--arrow:hover{
+  cursor: pointer;
+}

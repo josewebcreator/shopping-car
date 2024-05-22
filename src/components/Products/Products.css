@@ -46,3 +46,7 @@
   border-radius: 10px;
   z-index: 0
 }
+
+.product--car:hover{
+  cursor: pointer;
+}
