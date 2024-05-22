@@ -3,6 +3,19 @@ import actionTypes from "./actionTypes";
 export function reducer(state,action){
   switch (action.type){
 
+    case actionTypes.DELETE_TO_CAR : {
+
+      const productId = action.payload;
+
+      // Filtrar el arreglo onCar para excluir el producto con el ID coincidente
+      const updatedOnCar = state.onCar.filter(product => product.id !== productId);
+
+      return {
+        ...state,
+        onCar: updatedOnCar
+      };
+    }
+
     case actionTypes.ADD_TO_CAR : {
       const productId = action.payload.id;
       const product = action.payload;

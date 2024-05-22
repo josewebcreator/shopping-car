@@ -8,6 +8,7 @@
   border-radius: 0 10px 10px 0;
   overflow: hidden;
   z-index: 2;
+  overflow-y: scroll;
 }
 
 .display--arrow{
@@ -25,4 +26,43 @@
 
 .display--arrow:hover{
   cursor: pointer;
+}
+
+.car--product{
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.car--product > img{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.car--data {
+  position: relative;
+  gap: 10px;  /* Add some spacing between elements for readability */
+  color: black;
+  margin-top: 2%; 
+  margin-left: 2%;
+
+}
+
+.car--data h5, .car--data h6 {
+  margin: 0;
+}
+
+.car--delete{
+  position: absolute;
+  color: #808080;
+  right: 5px;
+  top: 5px;
+}
+
+.car--delete:hover{
+  cursor: pointer;
+  color: red;
 }
